@@ -1,0 +1,6 @@
+#client folders
+
+#server folders
+server/.metadata/
+server/RemoteSystemsTempFiles/
+server/Servers/

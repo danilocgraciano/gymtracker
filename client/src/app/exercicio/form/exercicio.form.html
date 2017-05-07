@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" (submit)="submit($event)">
+
+    <label>Nome:</label>
+    <input required name="nome" [(ngModel)]="exercicio.nome" formControlName="nome">
+    <div *ngIf="!myForm.controls.nome.valid && !myForm.controls.nome.pristine">
+        <span *ngIf="myForm.controls.nome.errors.required">
+            Nome obrigatório
+        </span>
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid">Salvar</button>
+    <a [routerLink]="['/exercicios']">Cancelar</a>
+</form>

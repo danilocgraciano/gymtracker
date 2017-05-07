@@ -1,0 +1,1 @@
+{"version":3,"file":"exercicio.component.js","sourceRoot":"","sources":["exercicio.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,sCAAiD;AAMjD,IAAa,kBAAkB;IAJ/B;QAMa,SAAI,GAAW,EAAE,CAAC;IAC/B,CAAC;IAAD,yBAAC;AAAD,CAAC,AAHD,IAGC;AADY;IAAR,YAAK,EAAE;;gDAAmB;AAFlB,kBAAkB;IAJ9B,gBAAS,CAAC;QACP,QAAQ,EAAE,WAAW;QACrB,WAAW,EAAE,4BAA4B;KAC5C,CAAC;GACW,kBAAkB,CAG9B;AAHY,gDAAkB"}
