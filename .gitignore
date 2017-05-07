@@ -1,4 +1,5 @@
 #client folders
+client/node_modules/
 
 #server folders
 server/.metadata/
