@@ -2,6 +2,7 @@ package com.gymtracker.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.gymtracker.dao.ExercicioDAO;
@@ -11,6 +12,7 @@ import com.gymtracker.service.ExercicioService;
 @Component
 public class ExercicioServiceImpl implements ExercicioService {
 
+	@Autowired
 	private ExercicioDAO dao;
 
 	@Override
@@ -34,8 +36,18 @@ public class ExercicioServiceImpl implements ExercicioService {
 	}
 
 	@Override
+	public List<Exercicio> find(String sql) throws Exception {
+		return dao.find(sql);
+	}
+
+	@Override
 	public List<Exercicio> findAll(Integer limit, Integer offset) throws Exception {
 		return dao.findAll(limit, offset);
+	}
+
+	@Override
+	public long count() throws Exception {
+		return dao.count();
 	}
 
 	@Override

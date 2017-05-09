@@ -11,33 +11,45 @@ import com.gymtracker.entity.Exercicio;
 public class ExercicioDAOImpl implements BaseDAO<Exercicio>{
 
 	@Override
-	public Exercicio save(Exercicio e) {
+	public Exercicio save(Exercicio e) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(Exercicio e) {
+	public void update(Exercicio e) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(String id) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Exercicio findById(String id) {
+	public Exercicio findById(String id) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Exercicio> findAll(Integer limit, Integer offset) {
+	public List<Exercicio> find(String sql) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
+	public List<Exercicio> findAll(Integer limit, Integer offset) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() throws Exception {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 }

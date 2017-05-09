@@ -12,7 +12,11 @@ public interface BaseService<E extends BaseEntity> {
 
 	public E findById(String id) throws Exception;
 
+	public List<E> find(String sql) throws Exception;
+
 	public List<E> findAll(Integer limit, Integer offset) throws Exception;
+
+	public long count() throws Exception;
 
 	public void validate(E e) throws Exception;
 
