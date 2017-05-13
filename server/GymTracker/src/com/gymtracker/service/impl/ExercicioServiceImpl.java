@@ -36,11 +36,6 @@ public class ExercicioServiceImpl implements ExercicioService {
 	}
 
 	@Override
-	public List<Exercicio> find(String sql) throws Exception {
-		return dao.find(sql);
-	}
-
-	@Override
 	public List<Exercicio> findAll(Integer limit, Integer offset) throws Exception {
 		return dao.findAll(limit, offset);
 	}
