@@ -1,5 +1,6 @@
 package com.gymtracker.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -71,10 +72,13 @@ public class ExercicioDAOImpl extends JDBCBaseDAO implements ExercicioDAO {
 		StringBuffer sql = new StringBuffer("SELECT * FROM ");
 		sql.append(ExercicioConstants.SCHEMA_TABELA);
 
-		Object args[] = { limit, offset };
+		List<Integer> lArgs = new ArrayList<Integer>();
 		if (limit != null && offset != null) {
 			sql.append(" LIMIT ? OFFSET ?");
+			lArgs.add(limit);
+			lArgs.add(offset);
 		}
+		Object args[] = lArgs.toArray();
 		return getJdbcTemplate().query(sql.toString(), args, new ExercicioRowMapper());
 
 	}
