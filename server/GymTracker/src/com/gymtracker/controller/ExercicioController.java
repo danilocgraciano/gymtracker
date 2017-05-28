@@ -23,7 +23,7 @@ public class ExercicioController {
 	@Autowired
 	private ExercicioService service;
 
-	@GetMapping("exercicios")
+	@GetMapping("api/exercicios")
 	public ResponseEntity getExercicios(Integer limit, Integer offset) {
 		List<Exercicio> list = null;
 		try {
@@ -36,13 +36,13 @@ public class ExercicioController {
 		}
 	}
 
-	@GetMapping("exercicio/{id}")
+	@GetMapping("api/exercicios/{id}")
 	public ResponseEntity getExercicio(@PathVariable("id") String id) {
 		Exercicio exercicio = null;
 		try {
 			exercicio = service.findById(id);
 			if (exercicio == null)
-				return new ResponseEntity("Nenhum exercício encontrado para o ID " + id, HttpStatus.NOT_FOUND);
+				return new ResponseEntity("Nenhum exercï¿½cio encontrado para o ID " + id, HttpStatus.NOT_FOUND);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -51,7 +51,7 @@ public class ExercicioController {
 		return new ResponseEntity(exercicio, HttpStatus.OK);
 	}
 
-	@PostMapping("exercicio")
+	@PostMapping("api/exercicios")
 	public ResponseEntity createExercicio(@RequestBody Exercicio exercicio) {
 
 		try {
@@ -64,7 +64,7 @@ public class ExercicioController {
 
 	}
 
-	@DeleteMapping("exercicio/{id}")
+	@DeleteMapping("api/exercicios/{id}")
 	public ResponseEntity deleteExercicio(@PathVariable("id") String id) {
 		try {
 			service.delete(id);
@@ -75,7 +75,7 @@ public class ExercicioController {
 		}
 	}
 
-	@PutMapping("exercicio")
+	@PutMapping("api/exercicios")
 	public ResponseEntity updateExercicio(@RequestBody Exercicio exercicio) {
 
 		try {

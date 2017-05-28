@@ -9,23 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var exercicio_service_1 = require("../service/exercicio.service");
 var ExercicioList = (function () {
-    function ExercicioList() {
+    function ExercicioList(service) {
+        this.service = service;
         this.exercicios = [];
-        this.exercicios = [
-            "Leg Press 45",
-            "Banco Extensor",
-            "Leg Press 180",
-            "Mesa Flexora deitada",
-            "Panturrilha Sentado + Drop Set",
-            "Desenvolvimento com Halteres",
-            "Elevação lateral",
-            "Elevação Frontal com Halteres",
-            "Remada Alta com Barra",
-            "Encolhimento com Halteres",
-            "Infra na Paralela"
-        ];
     }
+    ExercicioList.prototype.ngOnInit = function () {
+        var _this = this;
+        this.service
+            .findAll(null, null).subscribe(function (e) {
+            _this.exercicios = e;
+        }, function (err) { return console.log(err); });
+    };
     return ExercicioList;
 }());
 ExercicioList = __decorate([
@@ -33,7 +29,7 @@ ExercicioList = __decorate([
         selector: 'exercicio-list',
         templateUrl: './exercicio.list.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [exercicio_service_1.ExercicioService])
 ], ExercicioList);
 exports.ExercicioList = ExercicioList;
 //# sourceMappingURL=exercicio.list.js.map

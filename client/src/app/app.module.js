@@ -7,12 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var app_routes_1 = require("./app.routes");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var exercicio_component_1 = require("./exercicio/exercicio.component");
 var exercicio_list_1 = require("./exercicio/list/exercicio.list");
 var exercicio_form_1 = require("./exercicio/form/exercicio.form");
+var exercicio_service_1 = require("./exercicio/service/exercicio.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,8 +23,9 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, app_routes_1.routing, forms_1.FormsModule, forms_1.ReactiveFormsModule],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routes_1.routing, forms_1.FormsModule, forms_1.ReactiveFormsModule],
         declarations: [app_component_1.AppComponent, exercicio_list_1.ExercicioList, exercicio_form_1.ExercicioForm, exercicio_component_1.ExercicioComponent],
+        providers: [exercicio_service_1.ExercicioService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

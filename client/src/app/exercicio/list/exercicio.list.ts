@@ -1,26 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ExercicioService } from "../service/exercicio.service";
 
 @Component({
     selector: 'exercicio-list',
     templateUrl: './exercicio.list.html'
 })
-export class ExercicioList {
+export class ExercicioList implements OnInit {
 
     exercicios: Object[] = [];
 
-    constructor() {
-        this.exercicios = [
-            "Leg Press 45",
-            "Banco Extensor",
-            "Leg Press 180",
-            "Mesa Flexora deitada",
-            "Panturrilha Sentado + Drop Set",
-            "Desenvolvimento com Halteres",
-            "Elevação lateral",
-            "Elevação Frontal com Halteres",
-            "Remada Alta com Barra",
-            "Encolhimento com Halteres",
-            "Infra na Paralela"];
+    constructor(private service: ExercicioService) { }
+
+    ngOnInit(): void {
+        this.service
+            .findAll(null, null).subscribe(e => {
+                this.exercicios = e;
+            }, err => console.log(err));
     }
 
 }
